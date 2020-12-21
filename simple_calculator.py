@@ -1,18 +1,25 @@
+#---------------------------------------------------
+#Purpose:  Creating a simple calculator using 
+#Tkinter module that accepts mouse and keyboard 
+#inputs.
+#--------------------------------------------------
 from tkinter import*
 
+#---------------------------------
+##Initialization of Tkinter window
+#---------------------------------
 window = Tk()
 window.title("Simple Calculator")
-#window.minsize(300,300)
-
-frame = Frame(window)
-frame.grid(row=0, column=0)
 
 operator = ""
-temp_results = ""
 text_input = StringVar()
 
-
-def center_window(win):
+#------------------
+#Function creations
+#------------------
+#Center window function initially created when 'window' was given a specific size.  No longer called
+#and left just for reference in future programs.
+def center_window(win):   
     win.update_idletasks()
     width = win.winfo_width()
     height = win.winfo_height()
@@ -37,6 +44,8 @@ def btn_equals_input():
     operator = answer
 
 #center_window(window)
+
+
 #ROW 1
 txt_display = Entry(window, font =('arial',20,'bold'),textvariable = text_input, bd = 30, insertwidth = 4,
                     bg = "powder blue", justify = 'right').grid(row=1,columnspan = 4)
